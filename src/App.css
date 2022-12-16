@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	font-family: 'Poppins';
+	margin: 0;
+	padding: 0;
+	user-select: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	transition: all 0.2s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dark {
+	color: white;
+	background: #333;
 }
-
-.App-link {
-  color: #61dafb;
+code {
+	color: rgb(210, 133, 255);
+	font-weight: 500;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+[contenteditable] {
+	user-select: text;
+}
+.app {
+	display: grid;
+}
+.h1 {
+	font-size: 3em;
+	text-align: center;
+}
+.header {
+	background-image: linear-gradient(90deg, blue, red);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+.caption {
+	font-family: 'Fira Code';
+	margin-bottom: 5px;
+}
+.row {
+	border-bottom: 1px solid #ccc;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.card {
+	margin: 3px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background: #eeeeee80;
+	cursor: default;
+	padding: 0 5px;
+}
+.card code {
+	color: inherit;
+}
+input {
+	border-radius: 0;
+	outline: none;
+	margin: 5px;
+	border: none;
+}
+.btn {
+	color: inherit;
+	background: transparent;
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	height: 36px;
+	padding: 5px 10px;
+	margin: 6px;
+	font-size: 0.875rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	border: none;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;
+	outline: none;
+}
+.btn.rounded {
+	border-radius: 50vh;
+}
+.btn::before {
+	content: '';
+	position: absolute;
+	border-radius: inherit;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	opacity: 0;
+	background-color: currentColor;
+	transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+.btn:hover::before,
+.btn:focus-visible::before {
+	opacity: 0.06;
+}
+.btn.active::before {
+	opacity: 0.12;
+}
+.btn.disabled::before {
+	opacity: 0;
+	cursor: default;
+}
+.btn-group {
+	display: flex;
+	margin: 0;
+	border-radius: 50vh;
+}
+.btn-group > .btn {
+	margin: 0;
+	box-shadow: none;
+	border-radius: 0;
+}
+.btn-group > .btn:first-child {
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+	padding-left: 13px;
+}
+.btn-group > .btn:last-child {
+	border-top-right-radius: inherit;
+	border-bottom-right-radius: inherit;
+	padding-right: 13px;
 }
